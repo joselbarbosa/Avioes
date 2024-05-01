@@ -1,8 +1,8 @@
 namespace Avioes
 {
-    public partial class Formulario : Form
+    public partial class ClienteForm : Form
     {
-        public Formulario()
+        public ClienteForm()
         {
             InitializeComponent();
         }

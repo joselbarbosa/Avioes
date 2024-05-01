@@ -32,10 +32,10 @@
             selecionarVooLabel = new Label();
             VooDropDown = new ComboBox();
             criarVooLink = new LinkLabel();
-            lugarVoo = new Label();
             lugarVooLabel = new Label();
-            label1 = new Label();
             idClienteLabel = new Label();
+            lugarReservaValue = new TextBox();
+            clienteReservaValue = new TextBox();
             SuspendLayout();
             // 
             // headerReservaLabel
@@ -43,7 +43,7 @@
             headerReservaLabel.AutoSize = true;
             headerReservaLabel.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             headerReservaLabel.ForeColor = Color.LightSeaGreen;
-            headerReservaLabel.Location = new Point(48, 45);
+            headerReservaLabel.Location = new Point(81, 37);
             headerReservaLabel.Name = "headerReservaLabel";
             headerReservaLabel.Size = new Size(113, 37);
             headerReservaLabel.TabIndex = 1;
@@ -77,43 +77,39 @@
             criarVooLink.TabStop = true;
             criarVooLink.Text = "criar voo";
             // 
-            // lugarVoo
-            // 
-            lugarVoo.AutoSize = true;
-            lugarVoo.Location = new Point(119, 219);
-            lugarVoo.Name = "lugarVoo";
-            lugarVoo.Size = new Size(84, 28);
-            lugarVoo.TabIndex = 7;
-            lugarVoo.Text = "<none>";
-            // 
             // lugarVooLabel
             // 
             lugarVooLabel.AutoSize = true;
             lugarVooLabel.ForeColor = SystemColors.ControlText;
-            lugarVooLabel.Location = new Point(48, 219);
+            lugarVooLabel.Location = new Point(129, 219);
             lugarVooLabel.Name = "lugarVooLabel";
             lugarVooLabel.Size = new Size(65, 28);
             lugarVooLabel.TabIndex = 6;
             lugarVooLabel.Text = "Lugar:";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(154, 301);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 28);
-            label1.TabIndex = 9;
-            label1.Text = "<none>";
-            // 
             // idClienteLabel
             // 
             idClienteLabel.AutoSize = true;
             idClienteLabel.ForeColor = SystemColors.ControlText;
-            idClienteLabel.Location = new Point(48, 301);
+            idClienteLabel.Location = new Point(89, 301);
             idClienteLabel.Name = "idClienteLabel";
-            idClienteLabel.Size = new Size(100, 28);
+            idClienteLabel.Size = new Size(105, 28);
             idClienteLabel.TabIndex = 8;
-            idClienteLabel.Text = "ID Cliente:";
+            idClienteLabel.Text = "Nº Cliente:";
+            // 
+            // lugarReservaValue
+            // 
+            lugarReservaValue.Location = new Point(223, 219);
+            lugarReservaValue.Name = "lugarReservaValue";
+            lugarReservaValue.Size = new Size(151, 34);
+            lugarReservaValue.TabIndex = 9;
+            // 
+            // clienteReservaValue
+            // 
+            clienteReservaValue.Location = new Point(223, 295);
+            clienteReservaValue.Name = "clienteReservaValue";
+            clienteReservaValue.Size = new Size(151, 34);
+            clienteReservaValue.TabIndex = 10;
             // 
             // ReservaForm
             // 
@@ -121,16 +117,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(643, 476);
-            Controls.Add(label1);
+            Controls.Add(clienteReservaValue);
+            Controls.Add(lugarReservaValue);
             Controls.Add(idClienteLabel);
-            Controls.Add(lugarVoo);
             Controls.Add(lugarVooLabel);
             Controls.Add(criarVooLink);
             Controls.Add(VooDropDown);
             Controls.Add(selecionarVooLabel);
             Controls.Add(headerReservaLabel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "ReservaForm";
             Text = "ReservaForm";
             ResumeLayout(false);
@@ -143,9 +139,9 @@
         private Label selecionarVooLabel;
         private ComboBox VooDropDown;
         private LinkLabel criarVooLink;
-        private Label lugarVoo;
         private Label lugarVooLabel;
-        private Label label1;
         private Label idClienteLabel;
+        private TextBox lugarReservaValue;
+        private TextBox clienteReservaValue;
     }
 }

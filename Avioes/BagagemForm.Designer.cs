@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             headerBagagemLabel = new Label();
-            telefoneCliente = new Label();
             larguraLabel = new Label();
-            emailCliente = new Label();
             cumprimentoLabel = new Label();
-            nomeCliente = new Label();
             pesoLabel = new Label();
             fragilCheckBox = new CheckBox();
             registoBagagemButton = new Button();
+            pesoBagagemValue = new TextBox();
+            cumpBagagemValue = new TextBox();
+            largBagagemValue = new TextBox();
             SuspendLayout();
             // 
             // headerBagagemLabel
@@ -44,63 +44,36 @@
             headerBagagemLabel.AutoSize = true;
             headerBagagemLabel.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             headerBagagemLabel.ForeColor = Color.LightSeaGreen;
-            headerBagagemLabel.Location = new Point(38, 40);
+            headerBagagemLabel.Location = new Point(161, 38);
             headerBagagemLabel.Margin = new Padding(4, 0, 4, 0);
             headerBagagemLabel.Name = "headerBagagemLabel";
             headerBagagemLabel.Size = new Size(267, 37);
             headerBagagemLabel.TabIndex = 12;
             headerBagagemLabel.Text = "Registo de Bagagem:";
             // 
-            // telefoneCliente
-            // 
-            telefoneCliente.AutoSize = true;
-            telefoneCliente.Location = new Point(122, 239);
-            telefoneCliente.Name = "telefoneCliente";
-            telefoneCliente.Size = new Size(84, 28);
-            telefoneCliente.TabIndex = 18;
-            telefoneCliente.Text = "<none>";
-            // 
             // larguraLabel
             // 
             larguraLabel.AutoSize = true;
-            larguraLabel.Location = new Point(38, 239);
+            larguraLabel.Location = new Point(143, 245);
             larguraLabel.Name = "larguraLabel";
             larguraLabel.Size = new Size(82, 28);
             larguraLabel.TabIndex = 17;
             larguraLabel.Text = "Largura:";
             // 
-            // emailCliente
-            // 
-            emailCliente.AutoSize = true;
-            emailCliente.Location = new Point(181, 172);
-            emailCliente.Name = "emailCliente";
-            emailCliente.Size = new Size(84, 28);
-            emailCliente.TabIndex = 16;
-            emailCliente.Text = "<none>";
-            // 
             // cumprimentoLabel
             // 
             cumprimentoLabel.AutoSize = true;
-            cumprimentoLabel.Location = new Point(38, 172);
+            cumprimentoLabel.Location = new Point(88, 179);
             cumprimentoLabel.Name = "cumprimentoLabel";
             cumprimentoLabel.Size = new Size(137, 28);
             cumprimentoLabel.TabIndex = 15;
             cumprimentoLabel.Text = "Cumprimento:";
             // 
-            // nomeCliente
-            // 
-            nomeCliente.AutoSize = true;
-            nomeCliente.Location = new Point(100, 106);
-            nomeCliente.Name = "nomeCliente";
-            nomeCliente.Size = new Size(84, 28);
-            nomeCliente.TabIndex = 14;
-            nomeCliente.Text = "<none>";
-            // 
             // pesoLabel
             // 
             pesoLabel.AutoSize = true;
             pesoLabel.ForeColor = SystemColors.ControlText;
-            pesoLabel.Location = new Point(38, 106);
+            pesoLabel.Location = new Point(169, 114);
             pesoLabel.Name = "pesoLabel";
             pesoLabel.Size = new Size(56, 28);
             pesoLabel.TabIndex = 13;
@@ -109,7 +82,7 @@
             // fragilCheckBox
             // 
             fragilCheckBox.AutoSize = true;
-            fragilCheckBox.Location = new Point(38, 309);
+            fragilCheckBox.Location = new Point(142, 317);
             fragilCheckBox.Name = "fragilCheckBox";
             fragilCheckBox.Size = new Size(83, 32);
             fragilCheckBox.TabIndex = 19;
@@ -119,12 +92,33 @@
             // registoBagagemButton
             // 
             registoBagagemButton.BackColor = Color.Silver;
-            registoBagagemButton.Location = new Point(235, 384);
+            registoBagagemButton.Location = new Point(241, 389);
             registoBagagemButton.Name = "registoBagagemButton";
             registoBagagemButton.Size = new Size(187, 49);
             registoBagagemButton.TabIndex = 20;
             registoBagagemButton.Text = "Registo Bagagem";
             registoBagagemButton.UseVisualStyleBackColor = false;
+            // 
+            // pesoBagagemValue
+            // 
+            pesoBagagemValue.Location = new Point(241, 114);
+            pesoBagagemValue.Name = "pesoBagagemValue";
+            pesoBagagemValue.Size = new Size(125, 34);
+            pesoBagagemValue.TabIndex = 21;
+            // 
+            // cumpBagagemValue
+            // 
+            cumpBagagemValue.Location = new Point(241, 176);
+            cumpBagagemValue.Name = "cumpBagagemValue";
+            cumpBagagemValue.Size = new Size(125, 34);
+            cumpBagagemValue.TabIndex = 22;
+            // 
+            // largBagagemValue
+            // 
+            largBagagemValue.Location = new Point(241, 242);
+            largBagagemValue.Name = "largBagagemValue";
+            largBagagemValue.Size = new Size(125, 34);
+            largBagagemValue.TabIndex = 23;
             // 
             // BagagemForm
             // 
@@ -132,17 +126,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(646, 473);
+            Controls.Add(largBagagemValue);
+            Controls.Add(cumpBagagemValue);
+            Controls.Add(pesoBagagemValue);
             Controls.Add(registoBagagemButton);
             Controls.Add(fragilCheckBox);
-            Controls.Add(telefoneCliente);
             Controls.Add(larguraLabel);
-            Controls.Add(emailCliente);
             Controls.Add(cumprimentoLabel);
-            Controls.Add(nomeCliente);
             Controls.Add(pesoLabel);
             Controls.Add(headerBagagemLabel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "BagagemForm";
             Text = "BagagemForm";
             ResumeLayout(false);
@@ -152,13 +146,13 @@
         #endregion
 
         private Label headerBagagemLabel;
-        private Label telefoneCliente;
         private Label larguraLabel;
-        private Label emailCliente;
         private Label cumprimentoLabel;
-        private Label nomeCliente;
         private Label pesoLabel;
         private CheckBox fragilCheckBox;
         private Button registoBagagemButton;
+        private TextBox pesoBagagemValue;
+        private TextBox cumpBagagemValue;
+        private TextBox largBagagemValue;
     }
 }
