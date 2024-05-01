@@ -8,10 +8,22 @@ namespace AvioesLibrary
 {
     public class ClienteModel
     {
-        public string ClienteName { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
         public DateTime DataNasc { get; set; }
         public string Passaporte { get; set; }
+
+        public ClienteModel()
+        {
+        }
+        public ClienteModel(string nomeCliente, string emailCliente, string telefoneCliente, string passaporteCliente)
+        {
+            Nome = nomeCliente;
+            Email = emailCliente;
+            Telefone = telefoneCliente;
+            Passaporte = passaporteCliente;
+        }
     }
 }

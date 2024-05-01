@@ -121,6 +121,7 @@
             menuReservaButton.TabIndex = 15;
             menuReservaButton.Text = "Menu Reserva";
             menuReservaButton.UseVisualStyleBackColor = false;
+            menuReservaButton.Click += menuReservaButton_Click;
             // 
             // criarBagagenLink
             // 

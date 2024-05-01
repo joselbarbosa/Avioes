@@ -168,7 +168,7 @@
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(686, 429);
+            ClientSize = new Size(659, 429);
             Controls.Add(lugaresDisponiveisValue);
             Controls.Add(chegadaVooValue);
             Controls.Add(partidaVooValue);

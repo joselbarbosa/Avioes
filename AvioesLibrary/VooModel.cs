@@ -8,6 +8,7 @@ namespace AvioesLibrary
 {
     internal class VooModel
     {
+        public int Id { get; set; }
         public string NumVoo { get; set; }
         public string Origem { get; set; }
         public string Destino { get; set; }

@@ -11,6 +11,9 @@ namespace Avioes
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            // Initialize the database connections
+            AvioesLibrary.GlobalConfig.InitializeConnections(true, true);
             Application.Run(new ClienteForm());
         }
     }
