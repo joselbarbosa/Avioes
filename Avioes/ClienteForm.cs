@@ -1,4 +1,6 @@
 using AvioesLibrary;
+using AvioesLibrary.DataAccess;
+using AvioesLibrary.Models;
 using System.Drawing.Text;
 
 namespace Avioes
@@ -16,10 +18,7 @@ namespace Avioes
             { 
                 ClienteModel model = new ClienteModel(nomeClienteValue.Text, emailClienteValue.Text, telefoneClienteValue.Text, passaporteClienteValue.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreateCliente(model);
-                }
+                GlobalConfig.Connection.CreateCliente(model);
 
                 nomeClienteValue.Text = "";
                 emailClienteValue.Text = "";

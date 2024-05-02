@@ -1,3 +1,5 @@
+using AvioesLibrary;
+
 namespace Avioes
 {
     internal static class Program
@@ -13,7 +15,7 @@ namespace Avioes
             ApplicationConfiguration.Initialize();
 
             // Initialize the database connections
-            AvioesLibrary.GlobalConfig.InitializeConnections(true, true);
+            AvioesLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
             Application.Run(new ClienteForm());
         }
     }
