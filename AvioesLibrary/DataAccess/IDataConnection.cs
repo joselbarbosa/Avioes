@@ -10,5 +10,7 @@ namespace AvioesLibrary.DataAccess
     public interface IDataConnection
     {
         ClienteModel CreateCliente(ClienteModel model);
+        BagagemModel CreateBagagem(BagagemModel model);
+        VooModel CreateVoo(VooModel model);
     }
 }

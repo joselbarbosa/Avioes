@@ -120,6 +120,7 @@
             registoVooButton.TabIndex = 23;
             registoVooButton.Text = "Registo Voo";
             registoVooButton.UseVisualStyleBackColor = false;
+            registoVooButton.Click += registoVooButton_Click;
             // 
             // numVooValue
             // 

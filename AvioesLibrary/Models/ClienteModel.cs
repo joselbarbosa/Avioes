@@ -12,7 +12,6 @@ namespace AvioesLibrary.Models
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-        public DateTime DataNasc { get; set; }
         public string Passaporte { get; set; }
 
         public ClienteModel()
