@@ -70,5 +70,17 @@ namespace AvioesLibrary.DataAccess
                 return model;
             }
         }
+
+        public List<BagagemModel> GetBagagem_All()
+        {
+            List<BagagemModel> output;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                output = connection.Query<BagagemModel>("dbo.spBagagem_GetAll").ToList();
+            }
+
+            return output;
+        }
     }
 }
