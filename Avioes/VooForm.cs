@@ -85,7 +85,7 @@ namespace Avioes
             {
                 output = false;
             }
-            if (lugaresDisponiveis < 1)
+            if (lugaresDisponiveis <= 0)
             {
                 output = false;
             }

@@ -100,5 +100,24 @@ namespace AvioesLibrary.DataAccess
                 return model;
             }
         }
+
+        public ReservaModel CreateReserva(ReservaModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@dataReserva", model.DataReserva);
+                p.Add("@lugar", model.LugarReserva);
+                p.Add("@idCliente", model.ClienteReserva);
+                p.Add("@idVoo", model.VooReserva);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spReservas_Insert", p, commandType: CommandType.StoredProcedure);
+
+                model.Id = p.Get<int>("@id");
+
+                return model;
+            }
+        }
     }
 }

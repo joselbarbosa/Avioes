@@ -1,6 +1,6 @@
 ﻿namespace Avioes
 {
-    partial class ClienteForm
+    partial class showReservaButton
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,7 +35,7 @@
             passaporteLabel = new Label();
             headerBagagemLabel = new Label();
             numBagagemLabel = new Label();
-            menuReservaButton = new Button();
+            registarPassageiroButton = new Button();
             bagagemListBox = new ListBox();
             nomeClienteValue = new TextBox();
             emailClienteValue = new TextBox();
@@ -58,6 +58,7 @@
             label1 = new Label();
             numClienteValue = new TextBox();
             numClienteLabel = new Label();
+            menuReservaButton = new Button();
             SuspendLayout();
             // 
             // headerClienteLabel
@@ -128,16 +129,16 @@
             numBagagemLabel.TabIndex = 13;
             numBagagemLabel.Text = "Nº Bagagem:";
             // 
-            // menuReservaButton
+            // registarPassageiroButton
             // 
-            menuReservaButton.BackColor = Color.Silver;
-            menuReservaButton.Location = new Point(449, 448);
-            menuReservaButton.Name = "menuReservaButton";
-            menuReservaButton.Size = new Size(173, 51);
-            menuReservaButton.TabIndex = 15;
-            menuReservaButton.Text = "Menu Reserva";
-            menuReservaButton.UseVisualStyleBackColor = false;
-            menuReservaButton.Click += menuReservaButton_Click;
+            registarPassageiroButton.BackColor = Color.Silver;
+            registarPassageiroButton.Location = new Point(77, 448);
+            registarPassageiroButton.Name = "registarPassageiroButton";
+            registarPassageiroButton.Size = new Size(191, 51);
+            registarPassageiroButton.TabIndex = 15;
+            registarPassageiroButton.Text = "Registar Passageiro";
+            registarPassageiroButton.UseVisualStyleBackColor = false;
+            registarPassageiroButton.Click += registarPassageiroButton_Click;
             // 
             // bagagemListBox
             // 
@@ -332,12 +333,24 @@
             numClienteLabel.TabIndex = 40;
             numClienteLabel.Text = "Nº Cliente:";
             // 
-            // ClienteForm
+            // menuReservaButton
+            // 
+            menuReservaButton.BackColor = Color.Silver;
+            menuReservaButton.Location = new Point(493, 448);
+            menuReservaButton.Name = "menuReservaButton";
+            menuReservaButton.Size = new Size(191, 51);
+            menuReservaButton.TabIndex = 41;
+            menuReservaButton.Text = "Menu Reserva";
+            menuReservaButton.UseVisualStyleBackColor = false;
+            menuReservaButton.Click += menuReservaButton_Click;
+            // 
+            // showReservaButton
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1192, 522);
+            Controls.Add(menuReservaButton);
             Controls.Add(numClienteValue);
             Controls.Add(numClienteLabel);
             Controls.Add(altBagagemValue);
@@ -360,7 +373,7 @@
             Controls.Add(emailClienteValue);
             Controls.Add(nomeClienteValue);
             Controls.Add(bagagemListBox);
-            Controls.Add(menuReservaButton);
+            Controls.Add(registarPassageiroButton);
             Controls.Add(numBagagemLabel);
             Controls.Add(headerBagagemLabel);
             Controls.Add(passaporteLabel);
@@ -370,7 +383,7 @@
             Controls.Add(headerClienteLabel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
-            Name = "ClienteForm";
+            Name = "showReservaButton";
             Text = "Formulario Passageiro";
             ResumeLayout(false);
             PerformLayout();
@@ -386,7 +399,7 @@
         private Label headerBagagemLabel;
         private Label numBagagemLabel;
         private CheckBox checkCheckBox;
-        private Button menuReservaButton;
+        private Button registarPassageiroButton;
         private ListBox bagagemListBox;
         private TextBox nomeClienteValue;
         private TextBox emailClienteValue;
@@ -409,5 +422,6 @@
         private Label label1;
         private TextBox numClienteValue;
         private Label numClienteLabel;
+        private Button menuReservaButton;
     }
 }

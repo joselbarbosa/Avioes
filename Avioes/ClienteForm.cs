@@ -5,12 +5,12 @@ using System.Drawing.Text;
 
 namespace Avioes
 {
-    public partial class ClienteForm : Form
+    public partial class showReservaButton : Form
     {
         private List<BagagemModel> availableBagagens = GlobalConfig.Connection.GetBagagem_All();
         private List<BagagemModel> selectedBagagens = new List<BagagemModel>();
 
-        public ClienteForm()
+        public showReservaButton()
         {
             InitializeComponent();
 
@@ -30,7 +30,7 @@ namespace Avioes
             bagagemListBox.DisplayMember = "Bagtag";
         }
 
-        private void menuReservaButton_Click(object sender, EventArgs e)
+        private void registarPassageiroButton_Click(object sender, EventArgs e)
         {
             if (ValidatePassageiroForm())
             {
@@ -140,13 +140,13 @@ namespace Avioes
             decimal altBagagem = 0;
             int numCliente = 0;
 
-            bool pesoBagagmValidNumber = decimal.TryParse(pesoBagagemValue.Text, out pesoBagagem);
-            bool cumpBagagmValidNumber = decimal.TryParse(cumpBagagemValue.Text, out cumpBagagem);
-            bool largBagagmValidNumber = decimal.TryParse(largBagagemValue.Text, out largBagagem);
-            bool altBagagmValidNumber = decimal.TryParse(altBagagemValue.Text, out altBagagem);
+            bool pesoBagagemValidNumber = decimal.TryParse(pesoBagagemValue.Text, out pesoBagagem);
+            bool cumpBagagemValidNumber = decimal.TryParse(cumpBagagemValue.Text, out cumpBagagem);
+            bool largBagagemValidNumber = decimal.TryParse(largBagagemValue.Text, out largBagagem);
+            bool altBagagemValidNumber = decimal.TryParse(altBagagemValue.Text, out altBagagem);
             bool numClienteValidNumber = int.TryParse(altBagagemValue.Text, out numCliente);
 
-            if (pesoBagagmValidNumber == false)
+            if (pesoBagagemValidNumber == false)
             {
                 output = false;
             }
@@ -155,7 +155,7 @@ namespace Avioes
                 output = false;
             }
 
-            if (cumpBagagmValidNumber == false)
+            if (cumpBagagemValidNumber == false)
             {
                 output = false;
             }
@@ -164,7 +164,7 @@ namespace Avioes
                 output = false;
             }
 
-            if (largBagagmValidNumber == false)
+            if (largBagagemValidNumber == false)
             {
                 output = false;
             }
@@ -173,7 +173,7 @@ namespace Avioes
                 output = false;
             }
 
-            if (altBagagmValidNumber == false)
+            if (altBagagemValidNumber == false)
             {
                 output = false;
             }
@@ -198,6 +198,14 @@ namespace Avioes
 
 
             return output;
+        }
+
+        private void menuReservaButton_Click(object sender, EventArgs e)
+        {
+            ReservaForm reservaForm = new ReservaForm();
+
+            // Show the new form
+            reservaForm.Show();
         }
     }
 }
