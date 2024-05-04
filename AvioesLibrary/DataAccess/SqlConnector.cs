@@ -40,6 +40,7 @@ namespace AvioesLibrary.DataAccess
                 p.Add("@larg", model.Larg);
                 p.Add("@alt", model.Alt);
                 p.Add("@bagtag", model.Bagtag);
+                p.Add("@idCliente", model.IdCliente);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spBagagens_Insert", p, commandType: CommandType.StoredProcedure);
@@ -81,6 +82,23 @@ namespace AvioesLibrary.DataAccess
             }
 
             return output;
+        }
+
+        public ClienteBagsModel CreateClienteBags(ClienteBagsModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@idCliente", model.IdCliente);
+                p.Add("@idBagagem", model.IdBagagem);
+                p.Add("@Id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spClienteBags_Insert", p, commandType: CommandType.StoredProcedure);
+
+                model.Id = p.Get<int>("@Id");
+
+                return model;
+            }
         }
     }
 }

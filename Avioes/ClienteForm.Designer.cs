@@ -36,7 +36,6 @@
             headerBagagemLabel = new Label();
             numBagagemLabel = new Label();
             menuReservaButton = new Button();
-            criarBagagenLink = new LinkLabel();
             bagagemListBox = new ListBox();
             nomeClienteValue = new TextBox();
             emailClienteValue = new TextBox();
@@ -57,6 +56,8 @@
             cumprimentoLabel = new Label();
             pesoLabel = new Label();
             label1 = new Label();
+            numClienteValue = new TextBox();
+            numClienteLabel = new Label();
             SuspendLayout();
             // 
             // headerClienteLabel
@@ -130,23 +131,13 @@
             // menuReservaButton
             // 
             menuReservaButton.BackColor = Color.Silver;
-            menuReservaButton.Location = new Point(449, 432);
+            menuReservaButton.Location = new Point(449, 448);
             menuReservaButton.Name = "menuReservaButton";
             menuReservaButton.Size = new Size(173, 51);
             menuReservaButton.TabIndex = 15;
             menuReservaButton.Text = "Menu Reserva";
             menuReservaButton.UseVisualStyleBackColor = false;
             menuReservaButton.Click += menuReservaButton_Click;
-            // 
-            // criarBagagenLink
-            // 
-            criarBagagenLink.AutoSize = true;
-            criarBagagenLink.Location = new Point(449, 188);
-            criarBagagenLink.Name = "criarBagagenLink";
-            criarBagagenLink.Size = new Size(161, 28);
-            criarBagagenLink.TabIndex = 16;
-            criarBagagenLink.TabStop = true;
-            criarBagagenLink.Text = "registo bagagem";
             // 
             // bagagemListBox
             // 
@@ -217,32 +208,32 @@
             // 
             // altBagagemValue
             // 
-            altBagagemValue.Location = new Point(999, 309);
+            altBagagemValue.Location = new Point(989, 262);
             altBagagemValue.Name = "altBagagemValue";
             altBagagemValue.Size = new Size(125, 34);
-            altBagagemValue.TabIndex = 39;
-            altBagagemValue.Text = "0";
+            altBagagemValue.TabIndex = 36;
             // 
             // alturaLabel
             // 
             alturaLabel.AutoSize = true;
-            alturaLabel.Location = new Point(901, 312);
+            alturaLabel.Location = new Point(905, 268);
             alturaLabel.Name = "alturaLabel";
-            alturaLabel.Size = new Size(82, 28);
+            alturaLabel.Size = new Size(69, 28);
             alturaLabel.TabIndex = 38;
-            alturaLabel.Text = "Largura:";
+            alturaLabel.Text = "Altura:";
             // 
             // bagtagBagagemValue
             // 
-            bagtagBagagemValue.Location = new Point(999, 366);
+            bagtagBagagemValue.Location = new Point(989, 325);
             bagtagBagagemValue.Name = "bagtagBagagemValue";
             bagtagBagagemValue.Size = new Size(125, 34);
             bagtagBagagemValue.TabIndex = 37;
+            bagtagBagagemValue.Text = "0";
             // 
             // bagtagLabel
             // 
             bagtagLabel.AutoSize = true;
-            bagtagLabel.Location = new Point(905, 366);
+            bagtagLabel.Location = new Point(896, 328);
             bagtagLabel.Name = "bagtagLabel";
             bagtagLabel.Size = new Size(78, 28);
             bagtagLabel.TabIndex = 36;
@@ -250,7 +241,7 @@
             // 
             // largBagagemValue
             // 
-            largBagagemValue.Location = new Point(999, 246);
+            largBagagemValue.Location = new Point(989, 200);
             largBagagemValue.Name = "largBagagemValue";
             largBagagemValue.Size = new Size(125, 34);
             largBagagemValue.TabIndex = 35;
@@ -258,7 +249,7 @@
             // 
             // cumpBagagemValue
             // 
-            cumpBagagemValue.Location = new Point(999, 188);
+            cumpBagagemValue.Location = new Point(989, 142);
             cumpBagagemValue.Name = "cumpBagagemValue";
             cumpBagagemValue.Size = new Size(125, 34);
             cumpBagagemValue.TabIndex = 34;
@@ -266,7 +257,7 @@
             // 
             // pesoBagagemValue
             // 
-            pesoBagagemValue.Location = new Point(999, 132);
+            pesoBagagemValue.Location = new Point(989, 86);
             pesoBagagemValue.Name = "pesoBagagemValue";
             pesoBagagemValue.Size = new Size(125, 34);
             pesoBagagemValue.TabIndex = 33;
@@ -275,7 +266,7 @@
             // registoBagagemButton
             // 
             registoBagagemButton.BackColor = Color.Silver;
-            registoBagagemButton.Location = new Point(927, 432);
+            registoBagagemButton.Location = new Point(927, 450);
             registoBagagemButton.Name = "registoBagagemButton";
             registoBagagemButton.Size = new Size(187, 49);
             registoBagagemButton.TabIndex = 32;
@@ -286,7 +277,7 @@
             // larguraLabel
             // 
             larguraLabel.AutoSize = true;
-            larguraLabel.Location = new Point(901, 249);
+            larguraLabel.Location = new Point(892, 206);
             larguraLabel.Name = "larguraLabel";
             larguraLabel.Size = new Size(82, 28);
             larguraLabel.TabIndex = 31;
@@ -295,7 +286,7 @@
             // cumprimentoLabel
             // 
             cumprimentoLabel.AutoSize = true;
-            cumprimentoLabel.Location = new Point(846, 191);
+            cumprimentoLabel.Location = new Point(837, 148);
             cumprimentoLabel.Name = "cumprimentoLabel";
             cumprimentoLabel.Size = new Size(137, 28);
             cumprimentoLabel.TabIndex = 30;
@@ -305,7 +296,7 @@
             // 
             pesoLabel.AutoSize = true;
             pesoLabel.ForeColor = SystemColors.ControlText;
-            pesoLabel.Location = new Point(927, 132);
+            pesoLabel.Location = new Point(918, 89);
             pesoLabel.Name = "pesoLabel";
             pesoLabel.Size = new Size(56, 28);
             pesoLabel.TabIndex = 29;
@@ -323,12 +314,32 @@
             label1.TabIndex = 28;
             label1.Text = "Registo de Bagagem:";
             // 
+            // numClienteValue
+            // 
+            numClienteValue.Location = new Point(989, 385);
+            numClienteValue.Name = "numClienteValue";
+            numClienteValue.Size = new Size(125, 34);
+            numClienteValue.TabIndex = 38;
+            numClienteValue.Text = "0";
+            // 
+            // numClienteLabel
+            // 
+            numClienteLabel.AutoSize = true;
+            numClienteLabel.ForeColor = SystemColors.ControlText;
+            numClienteLabel.Location = new Point(869, 388);
+            numClienteLabel.Name = "numClienteLabel";
+            numClienteLabel.Size = new Size(105, 28);
+            numClienteLabel.TabIndex = 40;
+            numClienteLabel.Text = "Nº Cliente:";
+            // 
             // ClienteForm
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1192, 511);
+            ClientSize = new Size(1192, 522);
+            Controls.Add(numClienteValue);
+            Controls.Add(numClienteLabel);
             Controls.Add(altBagagemValue);
             Controls.Add(alturaLabel);
             Controls.Add(bagtagBagagemValue);
@@ -349,7 +360,6 @@
             Controls.Add(emailClienteValue);
             Controls.Add(nomeClienteValue);
             Controls.Add(bagagemListBox);
-            Controls.Add(criarBagagenLink);
             Controls.Add(menuReservaButton);
             Controls.Add(numBagagemLabel);
             Controls.Add(headerBagagemLabel);
@@ -377,7 +387,6 @@
         private Label numBagagemLabel;
         private CheckBox checkCheckBox;
         private Button menuReservaButton;
-        private LinkLabel criarBagagenLink;
         private ListBox bagagemListBox;
         private TextBox nomeClienteValue;
         private TextBox emailClienteValue;
@@ -398,5 +407,7 @@
         private Label cumprimentoLabel;
         private Label pesoLabel;
         private Label label1;
+        private TextBox numClienteValue;
+        private Label numClienteLabel;
     }
 }

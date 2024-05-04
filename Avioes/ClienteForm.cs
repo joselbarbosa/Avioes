@@ -108,7 +108,7 @@ namespace Avioes
         {
             if (ValidateBagagemForm())
             {
-                BagagemModel b = new BagagemModel(pesoBagagemValue.Text, cumpBagagemValue.Text, largBagagemValue.Text, altBagagemValue.Text, bagtagBagagemValue.Text);
+                BagagemModel b = new BagagemModel(pesoBagagemValue.Text, cumpBagagemValue.Text, largBagagemValue.Text, altBagagemValue.Text, bagtagBagagemValue.Text, numClienteValue.Text);
 
                 b = GlobalConfig.Connection.CreateBagagem(b);
 
@@ -121,6 +121,7 @@ namespace Avioes
                 largBagagemValue.Text = "0";
                 altBagagemValue.Text = "0";
                 bagtagBagagemValue.Text = "";
+                numClienteValue.Text = "0";
 
             }
             else
@@ -137,17 +138,19 @@ namespace Avioes
             decimal cumpBagagem = 0;
             decimal largBagagem = 0;
             decimal altBagagem = 0;
+            int numCliente = 0;
 
             bool pesoBagagmValidNumber = decimal.TryParse(pesoBagagemValue.Text, out pesoBagagem);
             bool cumpBagagmValidNumber = decimal.TryParse(cumpBagagemValue.Text, out cumpBagagem);
             bool largBagagmValidNumber = decimal.TryParse(largBagagemValue.Text, out largBagagem);
             bool altBagagmValidNumber = decimal.TryParse(altBagagemValue.Text, out altBagagem);
+            bool numClienteValidNumber = int.TryParse(altBagagemValue.Text, out numCliente);
 
             if (pesoBagagmValidNumber == false)
             {
                 output = false;
             }
-            if (pesoBagagem < 1)
+            if (pesoBagagem <= 0)
             {
                 output = false;
             }
@@ -156,7 +159,7 @@ namespace Avioes
             {
                 output = false;
             }
-            if (cumpBagagem < 1)
+            if (cumpBagagem <= 0)
             {
                 output = false;
             }
@@ -165,7 +168,7 @@ namespace Avioes
             {
                 output = false;
             }
-            if (largBagagem < 1)
+            if (largBagagem <= 0)
             {
                 output = false;
             }
@@ -174,7 +177,7 @@ namespace Avioes
             {
                 output = false;
             }
-            if (altBagagem < 1)
+            if (altBagagem <= 0)
             {
                 output = false;
             }
@@ -183,6 +186,16 @@ namespace Avioes
             {
                 output = false;
             }
+
+            if (numClienteValidNumber == false)
+            {
+                output = false;
+            }
+            if (numCliente <= 0)
+            {
+                output = false;
+            }
+
 
             return output;
         }

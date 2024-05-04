@@ -14,11 +14,12 @@ namespace AvioesLibrary.Models
         public decimal Larg { get; set; }
         public decimal Alt { get; set; }
         public string Bagtag { get; set; }
+        public int IdCliente { get; set; }
 
         public BagagemModel()
         {
         }
-        public BagagemModel(string pesoBagagem, string cumpBagagem, string largBagagem, string altBagagem, string bagtagBagagem)
+        public BagagemModel(string pesoBagagem, string cumpBagagem, string largBagagem, string altBagagem, string bagtagBagagem, string numCliente)
         {
             decimal pesoBagagemValue = 0;
             decimal.TryParse(pesoBagagem, out pesoBagagemValue);
@@ -37,6 +38,10 @@ namespace AvioesLibrary.Models
             Alt = altBagagemValue;
 
             Bagtag = bagtagBagagem;
+
+            int numClienteValue = 0;
+            int.TryParse(numCliente, out numClienteValue);
+            IdCliente = numClienteValue;
         }
     }
 }

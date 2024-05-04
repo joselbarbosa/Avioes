@@ -35,5 +35,10 @@ namespace AvioesLibrary.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public ClienteBagsModel CreateClienteBags(ClienteBagsModel model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
