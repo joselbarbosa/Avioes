@@ -24,6 +24,13 @@ namespace AvioesLibrary.DataAccess
             return model;
         }
 
+        public BagagemModel DeleteBagagem(BagagemModel model)
+        {
+            model.Id = 1;
+
+            return model;
+        }
+
         public VooModel CreateVoo(VooModel model)
         {
             model.Id = 1;

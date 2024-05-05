@@ -59,6 +59,7 @@
             numClienteValue = new TextBox();
             numClienteLabel = new Label();
             menuReservaButton = new Button();
+            deleteBagagemButton = new Button();
             SuspendLayout();
             // 
             // headerClienteLabel
@@ -180,7 +181,7 @@
             // removeBagagemButton
             // 
             removeBagagemButton.BackColor = Color.Silver;
-            removeBagagemButton.Location = new Point(347, 277);
+            removeBagagemButton.Location = new Point(347, 246);
             removeBagagemButton.Name = "removeBagagemButton";
             removeBagagemButton.Size = new Size(96, 51);
             removeBagagemButton.TabIndex = 22;
@@ -344,12 +345,24 @@
             menuReservaButton.UseVisualStyleBackColor = false;
             menuReservaButton.Click += menuReservaButton_Click;
             // 
-            // showReservaButton
+            // deleteBagagemButton
+            // 
+            deleteBagagemButton.BackColor = Color.Silver;
+            deleteBagagemButton.Location = new Point(347, 311);
+            deleteBagagemButton.Name = "deleteBagagemButton";
+            deleteBagagemButton.Size = new Size(96, 51);
+            deleteBagagemButton.TabIndex = 42;
+            deleteBagagemButton.Text = "Delete";
+            deleteBagagemButton.UseVisualStyleBackColor = false;
+            deleteBagagemButton.Click += deleteBagagemButton_Click;
+            // 
+            // ClienteForm
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1192, 522);
+            Controls.Add(deleteBagagemButton);
             Controls.Add(menuReservaButton);
             Controls.Add(numClienteValue);
             Controls.Add(numClienteLabel);
@@ -383,7 +396,7 @@
             Controls.Add(headerClienteLabel);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
-            Name = "showReservaButton";
+            Name = "ClienteForm";
             Text = "Formulario Passageiro";
             ResumeLayout(false);
             PerformLayout();
@@ -423,5 +436,6 @@
         private TextBox numClienteValue;
         private Label numClienteLabel;
         private Button menuReservaButton;
+        private Button deleteBagagemButton;
     }
 }

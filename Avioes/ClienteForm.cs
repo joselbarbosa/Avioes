@@ -137,6 +137,20 @@ namespace Avioes
             }
         }
 
+        private void deleteBagagemButton_Click(object sender, EventArgs e)
+        {
+            BagagemModel b = (BagagemModel)bagagemListBox.SelectedItem;
+
+            GlobalConfig.Connection.DeleteBagagem(b);
+
+            if (b != null)
+            {
+                selectedBagagens.Remove(b);
+
+                WireUpLists();
+            }
+        }
+
         private bool ValidateBagagemForm()
         {
             bool output = true;

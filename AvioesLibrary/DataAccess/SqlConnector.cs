@@ -78,6 +78,35 @@ namespace AvioesLibrary.DataAccess
             }
         }
 
+        // Ler Bagagens
+        public List<BagagemModel> GetBagagem_All()
+        {
+            List<BagagemModel> output;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                output = connection.Query<BagagemModel>("dbo.spBagagem_GetAll").ToList();
+            }
+
+            return output;
+        }
+
+        // Apagar Bagagens
+        public BagagemModel DeleteBagagem(BagagemModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                if (model != null)
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Bagtag", model.Bagtag);
+
+                    connection.Execute("dbo.spBagagens_Delete", p, commandType: CommandType.StoredProcedure);
+                }
+                return model;
+            }
+        }
+
         // Criar Voo
         public VooModel CreateVoo(VooModel model)
         {
@@ -99,20 +128,6 @@ namespace AvioesLibrary.DataAccess
                 return model;
             }
         }
-
-        // Ler Bagagens
-        public List<BagagemModel> GetBagagem_All()
-        {
-            List<BagagemModel> output;
-
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
-            {
-                output = connection.Query<BagagemModel>("dbo.spBagagem_GetAll").ToList();
-            }
-
-            return output;
-        }
-
 
         // Método que atualmente não está a ser utilizado
         public ClienteBagsModel CreateClienteBags(ClienteBagsModel model)
