@@ -107,6 +107,22 @@ namespace AvioesLibrary.DataAccess
             }
         }
 
+        // Atualizar Bagtags
+        public BagagemModel UpdateBagagem(BagagemModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                if (model != null)
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Bagtag", model.Bagtag);
+                    p.Add("@NewBagtag", model.NewBagtag);
+                    connection.Execute("dbo.spBagagens_Update", p, commandType: CommandType.StoredProcedure);
+                }
+                return model;
+            }
+        }
+
         // Criar Voo
         public VooModel CreateVoo(VooModel model)
         {

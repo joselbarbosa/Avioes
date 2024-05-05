@@ -83,6 +83,18 @@ namespace Avioes
             return output;
         }
 
+        private bool ValidateBagagemUpdate()
+        {
+            bool output = true;
+
+            if (updateBagtagValue.Text.Length == 0)
+            {
+                output = false;
+            }
+
+            return output;
+        }
+
         private void addBagagemButton_Click(object sender, EventArgs e)
         {
             BagagemModel b = (BagagemModel)selectBagagemDropDown.SelectedItem;
@@ -148,6 +160,35 @@ namespace Avioes
                 selectedBagagens.Remove(b);
 
                 WireUpLists();
+            }
+        }
+
+        private void updateBagtagButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateBagagemUpdate())
+            {
+                BagagemModel b = (BagagemModel)bagagemListBox.SelectedItem;
+
+                if (b != null)
+                {
+                    b.NewBagtag = updateBagtagValue.Text;
+
+                    GlobalConfig.Connection.UpdateBagagem(b);
+
+                    b.Bagtag = updateBagtagValue.Text;
+
+                    selectedBagagens.Remove(b);
+
+                    availableBagagens.Add(b);
+
+                    WireUpLists();
+
+                    updateBagtagValue.Text = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("This form has invalid information. Please check it and try again.");
             }
         }
 

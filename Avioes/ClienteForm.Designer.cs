@@ -60,6 +60,9 @@
             numClienteLabel = new Label();
             menuReservaButton = new Button();
             deleteBagagemButton = new Button();
+            updateBagtagButton = new Button();
+            updateBagtagValue = new TextBox();
+            updateBagtagLabel = new Label();
             SuspendLayout();
             // 
             // headerClienteLabel
@@ -133,7 +136,7 @@
             // registarPassageiroButton
             // 
             registarPassageiroButton.BackColor = Color.Silver;
-            registarPassageiroButton.Location = new Point(77, 448);
+            registarPassageiroButton.Location = new Point(77, 471);
             registarPassageiroButton.Name = "registarPassageiroButton";
             registarPassageiroButton.Size = new Size(191, 51);
             registarPassageiroButton.TabIndex = 15;
@@ -181,7 +184,7 @@
             // removeBagagemButton
             // 
             removeBagagemButton.BackColor = Color.Silver;
-            removeBagagemButton.Location = new Point(347, 246);
+            removeBagagemButton.Location = new Point(347, 242);
             removeBagagemButton.Name = "removeBagagemButton";
             removeBagagemButton.Size = new Size(96, 51);
             removeBagagemButton.TabIndex = 22;
@@ -268,7 +271,7 @@
             // registoBagagemButton
             // 
             registoBagagemButton.BackColor = Color.Silver;
-            registoBagagemButton.Location = new Point(927, 450);
+            registoBagagemButton.Location = new Point(927, 471);
             registoBagagemButton.Name = "registoBagagemButton";
             registoBagagemButton.Size = new Size(187, 49);
             registoBagagemButton.TabIndex = 32;
@@ -337,7 +340,7 @@
             // menuReservaButton
             // 
             menuReservaButton.BackColor = Color.Silver;
-            menuReservaButton.Location = new Point(493, 448);
+            menuReservaButton.Location = new Point(493, 471);
             menuReservaButton.Name = "menuReservaButton";
             menuReservaButton.Size = new Size(191, 51);
             menuReservaButton.TabIndex = 41;
@@ -348,7 +351,7 @@
             // deleteBagagemButton
             // 
             deleteBagagemButton.BackColor = Color.Silver;
-            deleteBagagemButton.Location = new Point(347, 311);
+            deleteBagagemButton.Location = new Point(347, 313);
             deleteBagagemButton.Name = "deleteBagagemButton";
             deleteBagagemButton.Size = new Size(96, 51);
             deleteBagagemButton.TabIndex = 42;
@@ -356,12 +359,42 @@
             deleteBagagemButton.UseVisualStyleBackColor = false;
             deleteBagagemButton.Click += deleteBagagemButton_Click;
             // 
+            // updateBagtagButton
+            // 
+            updateBagtagButton.BackColor = Color.Silver;
+            updateBagtagButton.Location = new Point(347, 385);
+            updateBagtagButton.Name = "updateBagtagButton";
+            updateBagtagButton.Size = new Size(96, 51);
+            updateBagtagButton.TabIndex = 43;
+            updateBagtagButton.Text = "Update";
+            updateBagtagButton.UseVisualStyleBackColor = false;
+            updateBagtagButton.Click += updateBagtagButton_Click;
+            // 
+            // updateBagtagValue
+            // 
+            updateBagtagValue.Location = new Point(493, 396);
+            updateBagtagValue.Name = "updateBagtagValue";
+            updateBagtagValue.Size = new Size(277, 34);
+            updateBagtagValue.TabIndex = 44;
+            // 
+            // updateBagtagLabel
+            // 
+            updateBagtagLabel.AutoSize = true;
+            updateBagtagLabel.Location = new Point(446, 396);
+            updateBagtagLabel.Name = "updateBagtagLabel";
+            updateBagtagLabel.Size = new Size(36, 28);
+            updateBagtagLabel.TabIndex = 45;
+            updateBagtagLabel.Text = "To:";
+            // 
             // ClienteForm
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1192, 522);
+            ClientSize = new Size(1192, 553);
+            Controls.Add(updateBagtagLabel);
+            Controls.Add(updateBagtagValue);
+            Controls.Add(updateBagtagButton);
             Controls.Add(deleteBagagemButton);
             Controls.Add(menuReservaButton);
             Controls.Add(numClienteValue);
@@ -437,5 +470,8 @@
         private Label numClienteLabel;
         private Button menuReservaButton;
         private Button deleteBagagemButton;
+        private Button updateBagtagButton;
+        private TextBox updateBagtagValue;
+        private Label updateBagtagLabel;
     }
 }

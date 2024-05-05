@@ -14,11 +14,13 @@ namespace AvioesLibrary.Models
         public decimal Larg { get; set; }
         public decimal Alt { get; set; }
         public string Bagtag { get; set; }
+        public string NewBagtag { get; set; }
         public int IdCliente { get; set; }
 
         public BagagemModel()
         {
         }
+
         public BagagemModel(string pesoBagagem, string cumpBagagem, string largBagagem, string altBagagem, string bagtagBagagem, string numCliente)
         {
             decimal pesoBagagemValue = 0;
