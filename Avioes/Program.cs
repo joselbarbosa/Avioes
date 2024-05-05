@@ -14,6 +14,7 @@ namespace Avioes
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+
             // Initialize the database connections
             AvioesLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
             Application.Run(new ReservaForm());
