@@ -18,6 +18,16 @@ namespace AvioesLibrary.Models
         {
             DataReserva = DateTime.Now;
         }
+
+        public ReservaModel(string id)
+        {
+            int apagarReservaValue = 0;
+            int.TryParse(id, out apagarReservaValue);
+            Id = apagarReservaValue;
+
+            DataReserva = DateTime.Now;
+        }
+
         public ReservaModel(string vooReserva, string clienteReserva, string lugarReserva)
         {
             int vooReservaValue = 0;

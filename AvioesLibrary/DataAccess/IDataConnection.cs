@@ -13,6 +13,7 @@ namespace AvioesLibrary.DataAccess
         BagagemModel CreateBagagem(BagagemModel model);
         VooModel CreateVoo(VooModel model);
         ReservaModel CreateReserva(ReservaModel model);
+        ReservaModel DeleteReserva(ReservaModel model);
         ClienteBagsModel CreateClienteBags(ClienteBagsModel model);
         List<BagagemModel> GetBagagem_All();
     }

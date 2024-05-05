@@ -1,16 +1,23 @@
-using AvioesLibrary;
-using AvioesLibrary.DataAccess;
 using AvioesLibrary.Models;
-using System.Drawing.Text;
+using AvioesLibrary;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Avioes
 {
-    public partial class showReservaButton : Form
+    public partial class ClienteForm : Form
     {
         private List<BagagemModel> availableBagagens = GlobalConfig.Connection.GetBagagem_All();
         private List<BagagemModel> selectedBagagens = new List<BagagemModel>();
 
-        public showReservaButton()
+        public ClienteForm()
         {
             InitializeComponent();
 
@@ -204,7 +211,6 @@ namespace Avioes
         {
             ReservaForm reservaForm = new ReservaForm();
 
-            // Show the new form
             reservaForm.Show();
         }
     }

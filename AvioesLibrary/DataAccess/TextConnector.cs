@@ -38,6 +38,13 @@ namespace AvioesLibrary.DataAccess
             return model;
         }
 
+        public ReservaModel DeleteReserva(ReservaModel model)
+        {
+            model.Id = 1;
+
+            return model;
+        }
+
         public List<BagagemModel> GetBagagem_All()
         {
             throw new NotImplementedException();

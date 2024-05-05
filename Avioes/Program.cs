@@ -16,7 +16,7 @@ namespace Avioes
 
             // Initialize the database connections
             AvioesLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
-            Application.Run(new showReservaButton());
+            Application.Run(new ReservaForm());
         }
     }
 }

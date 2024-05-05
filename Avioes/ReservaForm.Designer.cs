@@ -37,6 +37,10 @@
             clienteReservaValue = new TextBox();
             numClienteLabel = new Label();
             registarReservaButton = new Button();
+            apagarReservaValue = new TextBox();
+            apagarReservaButton = new Button();
+            apagarReservaLabel = new Label();
+            menuClienteButton = new Button();
             SuspendLayout();
             // 
             // headerReservaLabel
@@ -44,7 +48,7 @@
             headerReservaLabel.AutoSize = true;
             headerReservaLabel.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             headerReservaLabel.ForeColor = Color.LightSeaGreen;
-            headerReservaLabel.Location = new Point(210, 36);
+            headerReservaLabel.Location = new Point(258, 30);
             headerReservaLabel.Name = "headerReservaLabel";
             headerReservaLabel.Size = new Size(113, 37);
             headerReservaLabel.TabIndex = 1;
@@ -115,7 +119,7 @@
             // registarReservaButton
             // 
             registarReservaButton.BackColor = Color.Silver;
-            registarReservaButton.Location = new Point(210, 338);
+            registarReservaButton.Location = new Point(440, 167);
             registarReservaButton.Name = "registarReservaButton";
             registarReservaButton.Size = new Size(136, 71);
             registarReservaButton.TabIndex = 16;
@@ -123,12 +127,56 @@
             registarReservaButton.UseVisualStyleBackColor = false;
             registarReservaButton.Click += registarReservaButton_Click;
             // 
+            // apagarReservaValue
+            // 
+            apagarReservaValue.Location = new Point(258, 380);
+            apagarReservaValue.Name = "apagarReservaValue";
+            apagarReservaValue.Size = new Size(151, 34);
+            apagarReservaValue.TabIndex = 18;
+            // 
+            // apagarReservaButton
+            // 
+            apagarReservaButton.BackColor = Color.Silver;
+            apagarReservaButton.Location = new Point(440, 362);
+            apagarReservaButton.Name = "apagarReservaButton";
+            apagarReservaButton.Size = new Size(136, 71);
+            apagarReservaButton.TabIndex = 19;
+            apagarReservaButton.Text = "Apagar Reserva";
+            apagarReservaButton.UseVisualStyleBackColor = false;
+            apagarReservaButton.Click += apagarReservaButton_Click;
+            // 
+            // apagarReservaLabel
+            // 
+            apagarReservaLabel.AutoSize = true;
+            apagarReservaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            apagarReservaLabel.ForeColor = Color.LightSeaGreen;
+            apagarReservaLabel.Location = new Point(122, 383);
+            apagarReservaLabel.Name = "apagarReservaLabel";
+            apagarReservaLabel.Size = new Size(111, 28);
+            apagarReservaLabel.TabIndex = 20;
+            apagarReservaLabel.Text = "Nº Reserva:";
+            // 
+            // menuClienteButton
+            // 
+            menuClienteButton.BackColor = Color.Silver;
+            menuClienteButton.Location = new Point(83, 490);
+            menuClienteButton.Name = "menuClienteButton";
+            menuClienteButton.Size = new Size(493, 41);
+            menuClienteButton.TabIndex = 21;
+            menuClienteButton.Text = "Menu Cliente";
+            menuClienteButton.UseVisualStyleBackColor = false;
+            menuClienteButton.Click += menuClienteButton_Click;
+            // 
             // ReservaForm
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(524, 444);
+            ClientSize = new Size(679, 567);
+            Controls.Add(menuClienteButton);
+            Controls.Add(apagarReservaLabel);
+            Controls.Add(apagarReservaButton);
+            Controls.Add(apagarReservaValue);
             Controls.Add(registarReservaButton);
             Controls.Add(clienteReservaValue);
             Controls.Add(numClienteLabel);
@@ -157,5 +205,9 @@
         private TextBox clienteReservaValue;
         private Label numClienteLabel;
         private Button registarReservaButton;
+        private TextBox apagarReservaValue;
+        private Button apagarReservaButton;
+        private Label apagarReservaLabel;
+        private Button menuClienteButton;
     }
 }

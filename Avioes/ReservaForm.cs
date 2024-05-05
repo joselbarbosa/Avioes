@@ -23,7 +23,6 @@ namespace Avioes
         {
             VooForm vooForm = new VooForm();
 
-            // Show the new form
             vooForm.Show();
         }
 
@@ -31,13 +30,29 @@ namespace Avioes
         {
             if (ValidateReservaForm())
             {
-                ReservaModel model = new ReservaModel (vooReservaValue.Text, clienteReservaValue.Text, lugarReservaValue.Text);
+                ReservaModel model = new ReservaModel(vooReservaValue.Text, clienteReservaValue.Text, lugarReservaValue.Text);
 
                 GlobalConfig.Connection.CreateReserva(model);
 
                 vooReservaValue.Text = "0";
-                clienteReservaValue.Text = "0";          
+                clienteReservaValue.Text = "0";
                 lugarReservaValue.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("This form has invalid information. Please check it and try again.");
+            }
+        }
+
+        private void apagarReservaButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateDeleteReserva())
+            {
+                ReservaModel model = new ReservaModel(apagarReservaValue.Text);
+
+                GlobalConfig.Connection.DeleteReserva(model);
+
+                apagarReservaValue.Text = "0";
             }
             else
             {
@@ -79,6 +94,33 @@ namespace Avioes
             }
 
             return output;
+        }
+
+        private bool ValidateDeleteReserva()
+        {
+            bool output = true;
+
+            int apagarReserva = 0;
+
+            bool apagarReservaValidNumber = int.TryParse(apagarReservaValue.Text, out apagarReserva);
+
+            if (apagarReservaValidNumber == false)
+            {
+                output = false;
+            }
+            if (apagarReserva <= 0)
+            {
+                output = false;
+            }
+
+            return output;
+        }
+
+        private void menuClienteButton_Click(object sender, EventArgs e)
+        {
+            ClienteForm clienteForm = new ClienteForm();
+
+            clienteForm.Show();
         }
     }
 }

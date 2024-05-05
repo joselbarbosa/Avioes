@@ -1,6 +1,6 @@
 ﻿namespace Avioes
 {
-    partial class showReservaButton
+    partial class ClienteForm
     {
         /// <summary>
         ///  Required designer variable.
