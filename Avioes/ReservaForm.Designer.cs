@@ -45,6 +45,7 @@
             selectLugarButton = new Button();
             updateLugarButton = new Button();
             updateLugarValue = new TextBox();
+            updateLugarLabel = new Label();
             SuspendLayout();
             // 
             // headerReservaLabel
@@ -199,13 +200,23 @@
             updateLugarButton.TabIndex = 29;
             updateLugarButton.Text = "Permutar lugar";
             updateLugarButton.UseVisualStyleBackColor = false;
+            updateLugarButton.Click += updateLugarButton_Click;
             // 
             // updateLugarValue
             // 
-            updateLugarValue.Location = new Point(214, 438);
+            updateLugarValue.Location = new Point(280, 438);
             updateLugarValue.Name = "updateLugarValue";
-            updateLugarValue.Size = new Size(235, 34);
+            updateLugarValue.Size = new Size(169, 34);
             updateLugarValue.TabIndex = 31;
+            // 
+            // updateLugarLabel
+            // 
+            updateLugarLabel.AutoSize = true;
+            updateLugarLabel.Location = new Point(221, 441);
+            updateLugarLabel.Name = "updateLugarLabel";
+            updateLugarLabel.Size = new Size(53, 28);
+            updateLugarLabel.TabIndex = 32;
+            updateLugarLabel.Text = "Para:";
             // 
             // ReservaForm
             // 
@@ -213,6 +224,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(635, 582);
+            Controls.Add(updateLugarLabel);
             Controls.Add(updateLugarValue);
             Controls.Add(updateLugarButton);
             Controls.Add(selectLugarButton);
@@ -257,5 +269,6 @@
         private Button selectLugarButton;
         private Button updateLugarButton;
         private TextBox updateLugarValue;
+        private Label updateLugarLabel;
     }
 }

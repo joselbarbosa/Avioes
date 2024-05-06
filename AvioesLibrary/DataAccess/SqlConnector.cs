@@ -220,5 +220,22 @@ namespace AvioesLibrary.DataAccess
                 return model;
             }
         }
+
+        public ReservaModel UpdateReserva(ReservaModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                if (model != null)
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@Id", model.Id);
+                    p.Add("@Lugar", model.LugarReserva);
+                    p.Add("@NewLugar", model.NewLugarReserva);
+
+                    connection.Execute("dbo.spReservas_Update", p, commandType: CommandType.StoredProcedure);
+                }
+                return model;
+            }
+        }
     }
 }

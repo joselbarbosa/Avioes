@@ -62,7 +62,7 @@ namespace Avioes
 
         private void selectLugarButton_Click(object sender, EventArgs e)
         {
-            if (ValidateReservaValue()) 
+            if (ValidateReservaValue())
             {
                 ReservaModel model = new ReservaModel(apagarReservaValue.Text);
                 model = GlobalConfig.Connection.SelectReserva(model);
@@ -70,6 +70,35 @@ namespace Avioes
                 {
                     selectLugarValue.Text = model.LugarReserva;
                     apagarReservaValue.Text = "0";
+                }
+            }
+            else
+            {
+                MessageBox.Show("This form has invalid information. Please check it and try again.");
+            }
+        }
+
+        private void updateLugarButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateReservaValue())
+            {
+                if (ValidateUpdateLugar())
+                {
+                    ReservaModel r = new ReservaModel(apagarReservaValue.Text);
+
+                    if (r != null)
+                    {
+                        r.NewLugarReserva = updateLugarValue.Text;
+
+                        GlobalConfig.Connection.UpdateReserva(r);
+
+                        apagarReservaValue.Text = "0";
+                        updateLugarValue.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("This form has invalid information. Please check it and try again.");
                 }
             }
             else
@@ -127,6 +156,18 @@ namespace Avioes
                 output = false;
             }
             if (apagarReserva <= 0)
+            {
+                output = false;
+            }
+
+            return output;
+        }
+
+        private bool ValidateUpdateLugar()
+        {
+            bool output = true;
+
+            if (updateLugarValue.Text.Length == 0)
             {
                 output = false;
             }

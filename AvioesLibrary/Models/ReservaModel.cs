@@ -13,6 +13,7 @@ namespace AvioesLibrary.Models
         public int ClienteReserva { get; set; }
         public DateTime DataReserva { get; set; }
         public string LugarReserva { get; set; }
+        public string NewLugarReserva { get; set; }
 
         public ReservaModel()
         {

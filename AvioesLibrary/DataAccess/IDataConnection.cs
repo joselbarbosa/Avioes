@@ -18,6 +18,7 @@ namespace AvioesLibrary.DataAccess
         ReservaModel CreateReserva(ReservaModel model);
         ReservaModel SelectReserva(ReservaModel model);
         ReservaModel DeleteReserva(ReservaModel model);
+        ReservaModel UpdateReserva(ReservaModel model);
 
         // Interface que não está em uso
         ClienteBagsModel CreateClienteBags(ClienteBagsModel model);
