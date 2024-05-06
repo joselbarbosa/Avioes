@@ -41,6 +41,10 @@
             apagarReservaButton = new Button();
             apagarReservaLabel = new Label();
             menuClienteButton = new Button();
+            selectLugarValue = new TextBox();
+            selectLugarButton = new Button();
+            updateLugarButton = new Button();
+            updateLugarValue = new TextBox();
             SuspendLayout();
             // 
             // headerReservaLabel
@@ -48,7 +52,7 @@
             headerReservaLabel.AutoSize = true;
             headerReservaLabel.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             headerReservaLabel.ForeColor = Color.LightSeaGreen;
-            headerReservaLabel.Location = new Point(258, 30);
+            headerReservaLabel.Location = new Point(257, 17);
             headerReservaLabel.Name = "headerReservaLabel";
             headerReservaLabel.Size = new Size(113, 37);
             headerReservaLabel.TabIndex = 1;
@@ -58,16 +62,16 @@
             // 
             selecionarVooLabel.AutoSize = true;
             selecionarVooLabel.ForeColor = SystemColors.ControlText;
-            selecionarVooLabel.Location = new Point(83, 107);
+            selecionarVooLabel.Location = new Point(71, 80);
             selecionarVooLabel.Name = "selecionarVooLabel";
-            selecionarVooLabel.Size = new Size(145, 28);
+            selecionarVooLabel.Size = new Size(80, 28);
             selecionarVooLabel.TabIndex = 3;
-            selecionarVooLabel.Text = "Referência Voo:";
+            selecionarVooLabel.Text = "Nº Voo:";
             // 
             // criarVooLink
             // 
             criarVooLink.AutoSize = true;
-            criarVooLink.Location = new Point(258, 153);
+            criarVooLink.Location = new Point(181, 126);
             criarVooLink.Name = "criarVooLink";
             criarVooLink.Size = new Size(117, 28);
             criarVooLink.TabIndex = 12;
@@ -79,7 +83,7 @@
             // 
             lugarVooLabel.AutoSize = true;
             lugarVooLabel.ForeColor = SystemColors.ControlText;
-            lugarVooLabel.Location = new Point(164, 267);
+            lugarVooLabel.Location = new Point(86, 239);
             lugarVooLabel.Name = "lugarVooLabel";
             lugarVooLabel.Size = new Size(65, 28);
             lugarVooLabel.TabIndex = 6;
@@ -87,30 +91,30 @@
             // 
             // lugarReservaValue
             // 
-            lugarReservaValue.Location = new Point(258, 267);
+            lugarReservaValue.Location = new Point(181, 236);
             lugarReservaValue.Name = "lugarReservaValue";
-            lugarReservaValue.Size = new Size(151, 34);
+            lugarReservaValue.Size = new Size(268, 34);
             lugarReservaValue.TabIndex = 14;
             // 
             // vooReservaValue
             // 
-            vooReservaValue.Location = new Point(258, 107);
+            vooReservaValue.Location = new Point(181, 80);
             vooReservaValue.Name = "vooReservaValue";
-            vooReservaValue.Size = new Size(151, 34);
+            vooReservaValue.Size = new Size(268, 34);
             vooReservaValue.TabIndex = 11;
             // 
             // clienteReservaValue
             // 
-            clienteReservaValue.Location = new Point(258, 204);
+            clienteReservaValue.Location = new Point(181, 174);
             clienteReservaValue.Name = "clienteReservaValue";
-            clienteReservaValue.Size = new Size(151, 34);
+            clienteReservaValue.Size = new Size(268, 34);
             clienteReservaValue.TabIndex = 13;
             // 
             // numClienteLabel
             // 
             numClienteLabel.AutoSize = true;
             numClienteLabel.ForeColor = SystemColors.ControlText;
-            numClienteLabel.Location = new Point(124, 207);
+            numClienteLabel.Location = new Point(47, 179);
             numClienteLabel.Name = "numClienteLabel";
             numClienteLabel.Size = new Size(105, 28);
             numClienteLabel.TabIndex = 12;
@@ -119,9 +123,9 @@
             // registarReservaButton
             // 
             registarReservaButton.BackColor = Color.Silver;
-            registarReservaButton.Location = new Point(440, 167);
+            registarReservaButton.Location = new Point(473, 174);
             registarReservaButton.Name = "registarReservaButton";
-            registarReservaButton.Size = new Size(136, 71);
+            registarReservaButton.Size = new Size(114, 65);
             registarReservaButton.TabIndex = 16;
             registarReservaButton.Text = "Registar Reserva";
             registarReservaButton.UseVisualStyleBackColor = false;
@@ -129,50 +133,90 @@
             // 
             // apagarReservaValue
             // 
-            apagarReservaValue.Location = new Point(258, 380);
+            apagarReservaValue.Location = new Point(181, 303);
             apagarReservaValue.Name = "apagarReservaValue";
-            apagarReservaValue.Size = new Size(151, 34);
+            apagarReservaValue.Size = new Size(268, 34);
             apagarReservaValue.TabIndex = 18;
+            apagarReservaValue.Text = "0";
             // 
             // apagarReservaButton
             // 
             apagarReservaButton.BackColor = Color.Silver;
-            apagarReservaButton.Location = new Point(440, 362);
+            apagarReservaButton.Location = new Point(473, 298);
             apagarReservaButton.Name = "apagarReservaButton";
-            apagarReservaButton.Size = new Size(136, 71);
+            apagarReservaButton.Size = new Size(114, 45);
             apagarReservaButton.TabIndex = 19;
-            apagarReservaButton.Text = "Apagar Reserva";
+            apagarReservaButton.Text = "Delete";
             apagarReservaButton.UseVisualStyleBackColor = false;
             apagarReservaButton.Click += apagarReservaButton_Click;
             // 
             // apagarReservaLabel
             // 
             apagarReservaLabel.AutoSize = true;
-            apagarReservaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            apagarReservaLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             apagarReservaLabel.ForeColor = Color.LightSeaGreen;
-            apagarReservaLabel.Location = new Point(122, 383);
+            apagarReservaLabel.Location = new Point(47, 303);
             apagarReservaLabel.Name = "apagarReservaLabel";
-            apagarReservaLabel.Size = new Size(111, 28);
+            apagarReservaLabel.Size = new Size(116, 32);
             apagarReservaLabel.TabIndex = 20;
-            apagarReservaLabel.Text = "Nº Reserva:";
+            apagarReservaLabel.Text = "Reserva #";
             // 
             // menuClienteButton
             // 
             menuClienteButton.BackColor = Color.Silver;
-            menuClienteButton.Location = new Point(83, 490);
+            menuClienteButton.Location = new Point(47, 505);
             menuClienteButton.Name = "menuClienteButton";
-            menuClienteButton.Size = new Size(493, 41);
+            menuClienteButton.Size = new Size(540, 41);
             menuClienteButton.TabIndex = 21;
             menuClienteButton.Text = "Menu Cliente";
             menuClienteButton.UseVisualStyleBackColor = false;
             menuClienteButton.Click += menuClienteButton_Click;
+            // 
+            // selectLugarValue
+            // 
+            selectLugarValue.Location = new Point(214, 369);
+            selectLugarValue.Name = "selectLugarValue";
+            selectLugarValue.Size = new Size(235, 34);
+            selectLugarValue.TabIndex = 26;
+            // 
+            // selectLugarButton
+            // 
+            selectLugarButton.BackColor = Color.Silver;
+            selectLugarButton.Location = new Point(47, 364);
+            selectLugarButton.Name = "selectLugarButton";
+            selectLugarButton.Size = new Size(161, 45);
+            selectLugarButton.TabIndex = 28;
+            selectLugarButton.Text = "Localizar lugar";
+            selectLugarButton.UseVisualStyleBackColor = false;
+            selectLugarButton.Click += selectLugarButton_Click;
+            // 
+            // updateLugarButton
+            // 
+            updateLugarButton.BackColor = Color.Silver;
+            updateLugarButton.Location = new Point(47, 433);
+            updateLugarButton.Name = "updateLugarButton";
+            updateLugarButton.Size = new Size(161, 45);
+            updateLugarButton.TabIndex = 29;
+            updateLugarButton.Text = "Permutar lugar";
+            updateLugarButton.UseVisualStyleBackColor = false;
+            // 
+            // updateLugarValue
+            // 
+            updateLugarValue.Location = new Point(214, 438);
+            updateLugarValue.Name = "updateLugarValue";
+            updateLugarValue.Size = new Size(235, 34);
+            updateLugarValue.TabIndex = 31;
             // 
             // ReservaForm
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(679, 567);
+            ClientSize = new Size(635, 582);
+            Controls.Add(updateLugarValue);
+            Controls.Add(updateLugarButton);
+            Controls.Add(selectLugarButton);
+            Controls.Add(selectLugarValue);
             Controls.Add(menuClienteButton);
             Controls.Add(apagarReservaLabel);
             Controls.Add(apagarReservaButton);
@@ -209,5 +253,9 @@
         private Button apagarReservaButton;
         private Label apagarReservaLabel;
         private Button menuClienteButton;
+        private TextBox selectLugarValue;
+        private Button selectLugarButton;
+        private Button updateLugarButton;
+        private TextBox updateLugarValue;
     }
 }

@@ -58,7 +58,6 @@
             label1 = new Label();
             numClienteValue = new TextBox();
             numClienteLabel = new Label();
-            menuReservaButton = new Button();
             deleteBagagemButton = new Button();
             updateBagtagButton = new Button();
             updateBagtagValue = new TextBox();
@@ -70,7 +69,7 @@
             headerClienteLabel.AutoSize = true;
             headerClienteLabel.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             headerClienteLabel.ForeColor = Color.LightSeaGreen;
-            headerClienteLabel.Location = new Point(39, 28);
+            headerClienteLabel.Location = new Point(57, 28);
             headerClienteLabel.Name = "headerClienteLabel";
             headerClienteLabel.Size = new Size(149, 37);
             headerClienteLabel.TabIndex = 0;
@@ -337,17 +336,6 @@
             numClienteLabel.TabIndex = 40;
             numClienteLabel.Text = "Nº Cliente:";
             // 
-            // menuReservaButton
-            // 
-            menuReservaButton.BackColor = Color.Silver;
-            menuReservaButton.Location = new Point(493, 471);
-            menuReservaButton.Name = "menuReservaButton";
-            menuReservaButton.Size = new Size(191, 51);
-            menuReservaButton.TabIndex = 41;
-            menuReservaButton.Text = "Menu Reserva";
-            menuReservaButton.UseVisualStyleBackColor = false;
-            menuReservaButton.Click += menuReservaButton_Click;
-            // 
             // deleteBagagemButton
             // 
             deleteBagagemButton.BackColor = Color.Silver;
@@ -396,7 +384,6 @@
             Controls.Add(updateBagtagValue);
             Controls.Add(updateBagtagButton);
             Controls.Add(deleteBagagemButton);
-            Controls.Add(menuReservaButton);
             Controls.Add(numClienteValue);
             Controls.Add(numClienteLabel);
             Controls.Add(altBagagemValue);
@@ -468,7 +455,6 @@
         private Label label1;
         private TextBox numClienteValue;
         private Label numClienteLabel;
-        private Button menuReservaButton;
         private Button deleteBagagemButton;
         private Button updateBagtagButton;
         private TextBox updateBagtagValue;

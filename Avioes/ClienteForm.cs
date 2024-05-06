@@ -261,12 +261,5 @@ namespace Avioes
 
             return output;
         }
-
-        private void menuReservaButton_Click(object sender, EventArgs e)
-        {
-            ReservaForm reservaForm = new ReservaForm();
-
-            reservaForm.Show();
-        }
     }
 }

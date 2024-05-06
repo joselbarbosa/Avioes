@@ -99,7 +99,7 @@ namespace AvioesLibrary.DataAccess
                 if (model != null)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@Bagtag", model.Bagtag);
+                    p.Add("@Id", model.Id);
 
                     connection.Execute("dbo.spBagagens_Delete", p, commandType: CommandType.StoredProcedure);
                 }
@@ -115,8 +115,10 @@ namespace AvioesLibrary.DataAccess
                 if (model != null)
                 {
                     var p = new DynamicParameters();
+                    p.Add("@id", model.Id);
                     p.Add("@Bagtag", model.Bagtag);
                     p.Add("@NewBagtag", model.NewBagtag);
+
                     connection.Execute("dbo.spBagagens_Update", p, commandType: CommandType.StoredProcedure);
                 }
                 return model;
@@ -199,6 +201,21 @@ namespace AvioesLibrary.DataAccess
                 p.Add("@id", model.Id);
 
                 connection.Execute("dbo.spReservas_Delete", p, commandType: CommandType.StoredProcedure);
+
+                return model;
+            }
+        }
+
+        public ReservaModel SelectReserva(ReservaModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Avioes")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", model.Id);
+
+                string lugarReserva = connection.QuerySingleOrDefault<string>("dbo.spReservas_Select", p, commandType: CommandType.StoredProcedure);
+
+                model.LugarReserva = lugarReserva;
 
                 return model;
             }

@@ -46,13 +46,31 @@ namespace Avioes
 
         private void apagarReservaButton_Click(object sender, EventArgs e)
         {
-            if (ValidateDeleteReserva())
+            if (ValidateReservaValue())
             {
                 ReservaModel model = new ReservaModel(apagarReservaValue.Text);
 
                 GlobalConfig.Connection.DeleteReserva(model);
 
                 apagarReservaValue.Text = "0";
+            }
+            else
+            {
+                MessageBox.Show("This form has invalid information. Please check it and try again.");
+            }
+        }
+
+        private void selectLugarButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateReservaValue()) 
+            {
+                ReservaModel model = new ReservaModel(apagarReservaValue.Text);
+                model = GlobalConfig.Connection.SelectReserva(model);
+                if (model != null)
+                {
+                    selectLugarValue.Text = model.LugarReserva;
+                    apagarReservaValue.Text = "0";
+                }
             }
             else
             {
@@ -96,7 +114,7 @@ namespace Avioes
             return output;
         }
 
-        private bool ValidateDeleteReserva()
+        private bool ValidateReservaValue()
         {
             bool output = true;
 
